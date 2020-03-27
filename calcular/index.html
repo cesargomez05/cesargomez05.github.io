@@ -44,7 +44,7 @@
                     }
 
                     var operation;
-                    switch(match[1]) {
+                    switch(match[2]) {
                         case "+":
                             operation = "/";
                             break;
@@ -57,11 +57,10 @@
                         case "/":
                             operation = "+";
                             break;
-
                     }
 
-                    console.log(operation);
-
+                    var result = eval(match[1] + " " + operation + " " + match[3]);
+                    $txtDestino.val(result);
                 } catch (ex) {
                     alert(ex);
                 }

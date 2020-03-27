@@ -38,7 +38,29 @@
                         throw "Por favor ingresa la lista de operaciones";
                     }
 
-                    
+                    var match = value.match(/(\d+) *([+\-*\/]) *(\d+)/i);
+                    if (!match) {
+                        throw "La operación ingresada no es válida";
+                    }
+
+                    var operation;
+                    switch(match[1]) {
+                        case "+":
+                            operation = "/";
+                            break;
+                        case "-":
+                            operation = "*";
+                            break;
+                        case "*":
+                            operation = "-";
+                            break;
+                        case "/":
+                            operation = "+";
+                            break;
+
+                    }
+
+                    console.log(operation);
 
                 } catch (ex) {
                     alert(ex);
